@@ -393,14 +393,14 @@ hr{
 }
 
 
-/* Contact */
-.contact {
+/* booking */
+.booking {
     
-    background: url("/img/services/doctors.png");
+    background: url("../img/services/img-bg-booking.png");
     background-size: cover;
 }
 .about-banner {
-    background: url("/img/services/Zara-Chiropractic-Clinic.png");
+    background: url("../img/services/Zara-Chiropractic-Clinic.png");
     background-size: cover;
 }
 

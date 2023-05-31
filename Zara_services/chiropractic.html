@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="../css/chiropractic.css">
+    
+</head>
+
+<body ng-app="myApp">
+    <div>
+        <img style="width: 100%;" src="/img/services/bg-service.png" alt="">
+    </div>
+    <div class="container" ng-controller="myController3">
+        <div class="row">
+            <div class=" col-lg-12 col-md-12 col-sm-12">
+                <p style="font-size: 40px; font-weight: bolder; text-align: center;"> CHIROPRACTIC THERAPY</p>
+            </div>
+            <br>
+            <p ><b class="p">What is Wellness Chiropractic?</b></p>
+            <div class="a  col-lg-12 col-md-12 col-sm-12">
+                
+                <div ng-repeat="x in myData" class="">
+                    <div>{{x.chiropractic1}}</div>
+                    <div>{{x.chiropractic2}}</div>
+                </div>
+                <div class="center">
+                    <img class="img1" src="../img/beatiAid_img/chiropractic_img/CHIROPRACTIC1.png" alt="">
+                </div>
+            </div>
+            
+            <div class="a1 col-lg-12 col-md-12 col-sm-12">
+                
+                <div ng-repeat="x in myData" class="">
+                    <div>{{x.chiropractic3}}</div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p ><b class="p">6 Ways Your Health Can Improve </b></p>
+        <div class="row">
+            <div class="t1 col-lg-9 col-md-12 col-sm-12 ">
+                <div>
+    
+                    <div ng-repeat="x in myData" class="">
+                        <div><b>1. Less pain. </b></div>
+                        <div>{{x.chiropractic4}}</div> <br>
+                    </div>
+                    <div ng-repeat="x in myData" class="">
+                        <div><b>2. Better posture. </b></div>
+                        <div>{{x.chiropractic5}}</div> <br>
+                    </div>
+                    <div ng-repeat="x in myData" class="">
+                        <div><b>3. Fewer headaches.</b></div>
+                        <div>{{x.chiropractic6}}</div> <br>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-lg-3 col-md-12 col-sm-12">
+                <img class="img2" src="../img/beatiAid_img/chiropractic_img/CHIROPRACTIC2.png" alt="">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+    
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <img class="img3" src="../img/beatiAid_img/chiropractic_img/CHIROPRACTIC3.png" alt="">
+            </div>
+            <div class="t2 col-lg-8 col-md-12 col-sm-12">
+                <div ng-repeat="x in myData" class="">
+                    <div><b>4. Less pain. </b></div>
+                    <div>{{x.chiropractic7}}</div> 
+                </div>
+                <div ng-repeat="x in myData" class="">
+                    <div><b>5. Better posture. </b></div>
+                    <div>{{x.chiropractic8}}</div> 
+                </div>
+                <div ng-repeat="x in myData" class="">
+                    <div><b>6. Fewer headaches.</b></div>
+                    <div>{{x.chiropractic9}}</div> 
+                </div>
+            </div>
+    
+        </div>
+    
+        <div class="row">
+            <div class="a1 col-xs-12 col-lg-12 col-md-12 col-sm-12">
+                <div ng-repeat="x in myData" class="">
+                    <div>{{x.chiropractic10}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

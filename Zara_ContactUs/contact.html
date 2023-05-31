@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+
+<body ng-app="myApp">
+    <div>
+        <img class="img_top" src="../img/contact_img/THEMS-ABOUTUS.png" alt="">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h3 class=" pt-3">Contact Us</h3>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <p class="p">Please leave your complete information in the form below, <br>
+                Zara Therapy Clinic will contact you to support you as soon as possible.</p>
+        </div>
+    </div>
+
+
+    <div class="container container-fluid py-5 contact" style="background-color: #F3F3F3;">
+        <div class="row">
+
+            <div class="col-sm-12 col-lg-6 col-md-12">
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="FullName" placeholder="FullName">
+                        <label for="name">Full Name</label>
+                        <p id="NameError" class="error-message" style="color: red;"></p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div class="form-floating">
+                        <input type="tel" class="form-control" id="tel" placeholder="PhoneNumber" inputmode="nummeric">
+                        <label for="email">Phone Number</label>
+                        <p id="PhoneError" class="error-message" style="color: red;"></p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="Email" placeholder="E-Mail">
+                        <label for="message">E-Mail</label>
+                        <p id="EmailError" class="error-message" style="color: red;"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 col-md-12">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a message here" id="messageInput"
+                        style="height: 258px"></textarea>
+                    <label for="message">Message</label>
+                    <p id="messageError" class="error-message" style="color: red;"></p>
+                </div>
+            </div>
+
+            <div class="text-center pt-3">
+                <button class="btn btn-primary w-50 py-3" type="submit" onclick="Submit()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <br>
+
+   
+
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Thanks For Contact</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body">
+                    <p id="successMessage"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+</body>
+
+</html>

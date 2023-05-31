@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="../css/physical.css">
+
+</head>
+<div>
+    <img style="width: 100%;" src="/img/services/bg-service.png" alt="">
+</div>
+<body ng-app="myApp">
+
+    <div class="container" ng-controller="myController4">
+
+        <div>
+            <p style="font-size: 40px; font-weight: bolder; text-align: center;"> PHYSICAL THERAPY</p>
+        </div>
+    
+    
+            <div class="row">
+                <div ng-repeat="x in myData" class="col-lg-12 col-md-12 col-sm-12">
+                    <div>{{x.physical1}}</div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <img class="img1" src="../img/technique_img/physical_img/Physical_therapy.png" alt="">
+                </div>
+            </div>
+    
+    
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12"> 
+                <p><b>Depending on your medical problem and personal circumstances, the treatment can focus on various goals:</b></p>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul>
+                    <li>
+                        Improving or restoring the functioning of the body or the ability to move normally.
+                    </li>
+                    <li>
+                        Improving metabolism and the circulation of blood.
+                    </li>
+                    <li>
+                        Relieving pain.
+                    </li>
+                    <li>
+                        Improving coordination and strength.
+                    </li>
+                    <li>
+                        Compensating for physical disabilities: for example, strengthening the left arm if the right arm can’t move due to paralysis.
+                    </li>
+                    <li>
+                        Preventing chronic problems.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <img class="img2" src="../img/technique_img/physical_img/Physical_therapy1.png" alt="">
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <img class="img2" src="../img/technique_img/physical_img/Physical_therapy2.png" alt="">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <p><b>Benefits of physical therapy</b></p>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <p>Depending on the reason for treatment, the benefits of physical therapy may include:</p>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <img class="img2" src="../img/technique_img/physical_img/Physical_therapy3.png" alt="">
+            </div>
+            <div class="text1 col-lg-6 col-md-12 col-sm-12">
+                <ul>
+                    <li>
+                        Pain management with reduced need for opioids
+                    </li>
+                    <li>
+                        Avoiding surgery
+                    </li>
+                    <li>
+                        Improved mobility and movement
+                    </li>
+                    <li>
+                        Recovery from injury or trauma
+                    </li>
+                    <li>
+                        Recovery from stroke or paralysis
+                    </li>
+                    <li>
+                        Fall prevention
+                    </li>
+                    <li>
+                        Improved balance
+                    </li>
+                    <li>
+                        Management of age-related medical problems
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="a row">
+            <div ng-repeat="x in myData" class="col-lg-12 col-md-12 col-sm-12">
+                <div>{{x.physical2}}</div>
+            </div>
+            <div ng-repeat="x in myData" class="a-a1 col-lg-12 col-md-12 col-sm-12">
+                <div>{{x.physical3}}</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

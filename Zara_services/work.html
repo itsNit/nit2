@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="css/work.css">
+    
+</head>
+
+<body ng-app="myApp">
+    <div>
+        <img style="width: 100%;" src="/img/services/bg-service.png" alt="">
+    </div>
+    <div class="container" ng-controller="myController5">
+        <p style="font-size: 40px; font-weight: bolder; text-align: center;"> WORK INJURIES AND CAR ACCIDENT INJURIES</p>
+    
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <p><b>Private property</b></p>
+            </div>
+            <div ng-repeat="x in myData" class="col-lg-12 col-md-12 col-sm-12">
+                <div>{{x.work1}}</div>
+            </div>
+        </div>
+    
+        <div class="ter row">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <img class="img1" src="../img/technique_img/work_img/WORK_INJURIES.png" alt="">
+            </div>
+            <div ng-repeat="x in myData" class="col-lg-8 col-md-12 col-sm-12">
+                <p><b class="b1">What to do if a fall occurs on private property?</b></p>
+                <div>{{x.work2}}</div>
+                <div>{{x.work3}}</div>
+                <div>{{x.work4}}</div>
+                <div>{{x.work5}}</div>
+                <div>{{x.work6}}</div>
+            </div>
+        </div>
+    
+        <div class="ter row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <img class="img1" src="../img/technique_img/work_img/WORK_INJURIES1.png" alt=""> 
+            </div>
+            <div ng-repeat="x in myData" class="text1 col-lg-12 col-md-12 col-sm-12">
+                <br>
+                <div>{{x.work7}}</div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <p><b>What are the Therapy benefits?</b></p>
+            <div class="text2 col-lg-6 col-md-12 col-sm-12">
+                <div ng-repeat="x in myData" >
+                    <div>{{x.work7}}</div>
+                    <ul>
+                        <li>
+                            Relieve Your Pain   
+                        </li>
+                        <li>
+                            Strengthen & Flexibility
+                        </li>
+                        <li>
+                            Improve Your Functional Abilities
+                        </li>
+                        <li>
+                            Coordinate Your Return To Work
+                        </li>
+                        <li>
+                            Provide Ergonomic Advice
+                        </li>
+                        <li>
+                            Provide Workplace Injury Prevention
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text1 col-lg-6 col-md-12 col-sm-12">
+                <img class="img2" src="../img/technique_img/work_img/WORK_INJURIES2.png" alt="">
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>
