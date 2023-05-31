@@ -24,6 +24,12 @@ hr{
     border: 1px solid var(--primary);
     border-radius: 20px;
 }
+.btn-primary{
+    background-color: var(--primary);
+}
+.btn-primary:hover{
+    background-color: #017dc4;
+}
 /* config màu dễ dàng thay đổi hơn */
 
 .back-to-top {
@@ -594,4 +600,10 @@ input [type=search]::after{
 .cart-dropdown{
     background-color: #ffffff;
     border-style: solid;
+}
+.view-online{
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
 }

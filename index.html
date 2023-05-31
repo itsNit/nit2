@@ -72,8 +72,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarCollapse">
-                    <div class="navbar-nav" id="menu">
-                        <a href="/" class="nav-item nav-link active">Home</a>
+                    <div class="navbar-nav">
+                        <a href="/" class="nav-item nav-link">Home</a>
                         <a href="#!about" class="nav-item nav-link">About us</a>
                         <div class="nav-item dropdown">
                             <a href="#services" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
@@ -105,8 +105,8 @@
                         <a href="#contact" class="nav-item nav-link">Contact Us</a>
                         <input class="search" type="search" placeholder=" Search"
                             style="margin-top: 20px; margin-bottom: 20px;border-radius: 10px;">
-                            <a href="#" class="nav-item nav-link px-4"  data-bs-toggle="modal"
-                            data-bs-target="#modalCart" id="cart"><i class="fa-solid fa-shopping-cart"></i> Cart</a>
+                        <a href="#" class="nav-item nav-link px-4" data-bs-toggle="modal" data-bs-target="#modalCart"
+                            id="cart"><i class="fa-solid fa-shopping-cart"></i> Cart</a>
                         <a href="#" class="nav-item nav-link px-4" id="btn-hide" data-bs-toggle="modal"
                             data-bs-target="#authModal"><i class="fa-regular fa-user"></i> Log In</a>
                         <div class="nav-item dropdown px-5">
@@ -139,7 +139,8 @@
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
                     <span id="checkout-alert" class="text-center">Please Login To Checkout</span>
-                    <button class="btn btn-primary text-center" id="btn-checkout" onclick="checkoutAndCloseModal()">Checkout</button>
+                    <button class="btn btn-primary text-center" id="btn-checkout"
+                        onclick="checkoutAndCloseModal()">Checkout</button>
                 </div>
             </div>
         </div>
@@ -343,15 +344,15 @@
     <!-- Custom JavaScript -->
     <script>
         function checkoutAndCloseModal() {
-          // Thực hiện chuyển trang
-          window.location.href = "#!cart";
-      
-          // Tắt modal
-          var modal = document.getElementById("modalCart");
-          var modalInstance = bootstrap.Modal.getInstance(modal);
-          modalInstance.hide();
+            // Thực hiện chuyển trang
+            window.location.href = "#!cart";
+
+            // Tắt modal
+            var modal = document.getElementById("modalCart");
+            var modalInstance = bootstrap.Modal.getInstance(modal);
+            modalInstance.hide();
         }
-      </script>
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const thumbnailImages = document.querySelectorAll('.thumbnail');
@@ -424,27 +425,27 @@
                     controller: 'AccessorieDetailController'
                 });
         });
-        app.controller('CheckoutController', function($http){
+        app.controller('CheckoutController', function ($http) {
             // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
+            (function () {
+                'use strict'
 
-  window.addEventListener('load', function () {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation')
+                window.addEventListener('load', function () {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation')
 
-    // Loop over them and prevent submission
-    Array.prototype.filter.call(forms, function (form) {
-      form.addEventListener('submit', function (event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-        form.classList.add('was-validated')
-      }, false)
-    })
-  }, false)
-}())
+                    // Loop over them and prevent submission
+                    Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
+                            form.classList.add('was-validated')
+                        }, false)
+                    })
+                }, false)
+            }())
         })
         app.controller('ProductController', function ($scope, $http, CartService) {
             $http.get('/json/products.json').then(function (response) {
@@ -640,6 +641,7 @@
             this.getCartItems = function () {
                 this.loadCartItems();
                 return cartItems;
+                return cartItem;
             };
 
             this.getTotalPrice = function () {
@@ -653,12 +655,15 @@
 
             this.saveCartItems = function () {
                 localStorage.setItem("cartItems", JSON.stringify(cartItems));
+                localStorage.setItem("cartItem", JSON.stringify(cartItem));
             };
 
             this.loadCartItems = function () {
                 var storedCartItems = localStorage.getItem("cartItems");
+                var storedCartItem = localStorage.getItem("cartItem");
                 if (storedCartItems) {
                     cartItems = JSON.parse(storedCartItems);
+                    cartItem = JSON.parse(storedCartItem);
                 }
             };
         });
@@ -756,10 +761,11 @@
                 controller: function ($scope, CartService) {
                     $scope.cartItems = CartService.getCartItems();
                     $scope.updateTotalPrice = function () {
-                // Tính toán lại giá khi số lượng thay đổi
-                $scope.totalPrice = CartService.getTotalPrice();
-                $scope.totalPrice2 = CartService.getTotalPrice();
-            };
+                        $scope.totalPrice = CartService.getTotalPrice();
+                        $scope.totalPrice2 = CartService.getTotalPrice();
+                        
+                    };
+                    $scope.totalPrice = CartService.getTotalPrice();
                     $scope.totalPrice2 = CartService.getTotalPrice();
                     $scope.applyCoupon = function () {
                         CartService.applyCoupon($scope.couponCode);
@@ -805,6 +811,7 @@
                         District 3, Ho Chi Minh City</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>1900.123.123</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>zaratherapyclinic@gmail.com</p>
+                    <p class="mb-2 view-online"><i class="fa fa-user me-3"> </i> View online: <span id="view-online"></span> </p>
 
                 </div>
                 <div class="col-lg-2 col-md-6">
@@ -825,7 +832,7 @@
                     <h4 class="text-dark mb-4">Address</h4>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.273125983394!2d106.6836567!3d10.790381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d34a704ab7%3A0xe4e75cbec27ea20f!2zMjk0IMSQLiBOYW0gS-G7syBLaOG7n2kgTmdoxKlhLCBQaMaw4budbmcgOCwgUXXhuq1uIDMsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1683446992468!5m2!1svi!2s"
-                        width="200px" height="100px" style="border:0;" allowfullscreen="" loading="lazy"
+                        width="300px" height="150px" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
@@ -833,7 +840,9 @@
         </div>
     </div>
     <!-- Footer End -->
-
+    <script>
+         document.getElementById("view-online").innerHTML = Math.floor(Math.random() * 10 + 1);;
+        </script>
 
     <button class="btn btn-lg btn-primary btn-lg-square rounded-circle popup-button" data-bs-toggle="modal"
         data-bs-target="#contactModal">
